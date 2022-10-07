@@ -23,7 +23,7 @@ test:
 lint:
 	make install
 	docker-compose run --rm py poetry run flake8 tests app.py python_boilerplate
-	docker-compose run --rm py poetry run isort --check --diff tests app.py python_boilerplate
+	docker-compose run --rm py poetry run isort  --profile black --check --diff tests app.py python_boilerplate
 	docker-compose run --rm py poetry run black --check tests app.py python_boilerplate
 	docker-compose run --rm py poetry run mypy tests app.py python_boilerplate
 
